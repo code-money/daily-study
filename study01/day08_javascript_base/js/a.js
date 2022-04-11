@@ -1,0 +1,1 @@
+alert("我是js下的a.js")

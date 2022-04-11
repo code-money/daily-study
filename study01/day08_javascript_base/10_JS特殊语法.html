@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>特殊语法</title>
+</head>
+<body>
+<script>
+    /*
+        定义变量可以不使用var关键字,主要体现再函数内定义的时候有所不同
+        在函数外使用var不使用var没区别
+        使用var定义：局部变量
+        不适用var定义：全局变量
+     */
+    function f() {
+         b=4;
+    }
+    f();
+    alert(b)
+</script>
+</body>
+</html>
