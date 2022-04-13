@@ -10,7 +10,66 @@
 </html>
 <script>
     /*
-        Function 对象
-
+        Function：函数（方法）对象
+             1.创建：
+                  1.function 方法名称(形参列表){
+                        方法体
+                  }
+                  2.var 方法名=function(形参列表){
+                        方法体
+                  }
+             2.方法：
+             3.属性：
+                 length：代表形参的个数
+             4.特点：
+                 1.方法定义是，形参的类型不需要写
+                 2.方法是一个对象，如果定于名称相同的方法，会覆盖原方法
+                 3.在js中，方法的调用只与方法的名称有关，和参数列表无关
+                 4.在方法声明中有一个隐藏的内置对象（数组），arguments，封装所有的实际参数
+             5.调用
+                 方法名称（实参列表）
      */
+
+
+    /*function f1(a,b) {
+        alert(a+b);
+    }
+    f1(3,4);*/
+
+    /*var f2 = function (a,b) {
+        alert(a*b);
+    }
+    // f2(2,3);
+    alert(f2.length);*/
+
+    /*var f3=function (a,b) {
+        // alert(a-b);
+        alert(a);
+        alert(b);
+    }
+    // f3(4,5)
+    // f3(4)
+    // f3();*/
+
+
+    /*f3(4,5,6)
+
+    function f4(a,b) {
+        return a+b;
+    }
+    document.write(f4(2,3));*/
+
+    /*
+        求任意个数的和
+     */
+    function add() {
+        var sum=0;
+        for (let i = 0; i < arguments.length; i++) {
+            sum+=arguments[i];
+        }
+        return sum;
+    }
+    var sum = add(100,34,256);
+    document.write(sum)
+
 </script>
