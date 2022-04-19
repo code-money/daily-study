@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+</head>
+<body>
+<img id="light" src="img/off.gif">
+</body>
+</html>
+<script>
+    //1.根据id获取图片对象
+    var light = document.getElementById("light");
+    //2.写一个flag来判断灯是否开着
+    var flag=false;
+    //3.绑定ligth对象的单击方法
+    light.onclick=function fun() {
+        if (flag){
+            light.src="img/off.gif";
+            flag=false;
+        }else {
+            light.src="img/on.gif";
+            flag=true;
+        }
+    };
+
+
+</script>
