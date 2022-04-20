@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window</title>
+</head>
+<body>
+<input id="openBtn" type="button" value="打开百度">
+<input id="closeBtn" type="button" value="关闭窗口">
+</body>
+</html>
+<script>
+    /*
+        Window:窗口对象
+            1.创建：无需创建即可使用
+            2.方法
+                1.与弹出框有关：
+                    alert("警告消息")：显示带有一段消息和一个提示按钮的警告框
+                    confirm("提示消息")：显示带有一段消息和一个确认按钮和一个取消按钮的提示框框
+                        * 如果用户点击确定按钮，方法返回true
+                        * 如果用户点击取消按钮，方法返回false
+                    prompt("提示消息")：显示可提示用户输入的对话框
+                2.与打开关闭有关的方法
+                    close()：关闭浏览器窗口
+                        * 谁调用我，我关谁
+                    open("可以写要打开的网址也可一为空")：打开一个新的浏览器窗口
+                        * 返回一个新的Window对象
+                3.与定时有关的方法
+                    setTimeout()：在指定的毫秒数后调用函数或计算表达式
+                        * 参数
+                            1.js代码或方法对象
+                            2.毫秒值
+                        * 返回值
+                            1.唯一标识用于取消定时器
+                    clearTimeout()：取消由setTimeout()方法设置的 timeout
+
+                    setInterval()：按照指定的周期来调用函数或计算表达式
+                    clearInterval()：取消由setInterval()设置的 timout
+
+     */
+
+
+    /*//确认框
+    var flag = confirm("您确定要退出吗？");
+    if (flag){
+        alert("bye~~");
+    }else {
+        alert("手别抖啊");
+    }*/
+
+
+    /*//输入框
+    var s = prompt("请输入用户名");
+    alert(s);*/
+
+    /*//打开一个新窗口
+    open();*/
+
+    /*var openBtn = document.getElementById("openBtn");
+    //新建一个对象
+    var newWindow;
+    openBtn.onclick=function () {
+        //打开新窗口并且返回一个window对象
+        newWindow=open("http://www.baidu.com");
+    }
+
+    var closeBtn = document.getElementById("closeBtn");
+    closeBtn.onclick=function () {
+        //关闭当前窗口
+        //close();
+
+        //关闭对象窗口
+        newWindow.close();
+    }*/
+
+
+    /*//一次性定时器
+    setTimeout(fun1,2000);
+    function fun1() {
+        alert("boom!!")
+    }*/
+
+
+    //返回一个interval对象
+    var interval = setInterval(fun2,2000);  //设置一个循环定时器，每2秒钟执行一次fun2方法
+    function fun2() {
+        document.writeln("time");
+    }
+
+
+    setTimeout(fun3,8000)//设置一个定时器，8秒后执行fun3方法
+    function fun3() {
+        clearInterval(interval);//调用clearInterval方法关闭interval对象
+        document.writeln("It's over");
+    }
+
+</script>

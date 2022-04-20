@@ -13,6 +13,7 @@ public class Demo02AndStr {
     }
 
     public static void main(String[] args) {
+        int a=1;
         method("Hello",
                 (t)->{
                     System.out.println(t.toLowerCase());
