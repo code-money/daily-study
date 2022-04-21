@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document对象</title>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div id="div3">div3</div>
+    <div class="cls1">div4</div>
+    <div class="cls1">div5</div>
+
+    <input type="text" name="username">
+</body>
+</html>
+<script>
+    /*
+    Document：文档对象
+        1.创建（获取）：在html dom模型中可以使用window对象来获取
+            1.window.document
+            2.document
+        2.方法
+            1.获取Element对象:
+                1.getElementById()：根据id属性值获取元素对象。id属性值一般唯一
+                1.getElementsByTagName()：根据元素名称获取元素对象们，返回值是一个数组
+                1.getElementsByClassName()：根据Class属性值获取元素对象们，返回值是一个数组
+                1.getElementsByName()：根据name属性值获取元素对象们，返回值是一个数组。
+            2.创建其他DOM对象：
+                1.createAttribute(name):
+                2.createComment():
+                3.createElement():
+                4.createTextNode():
+        3.属性
+     */
+
+
+
+    /*//2.根据元素名称获取元素对象们，返回值是一个数组
+    var divs = document.getElementsByTagName("div");
+    for (let div of divs) {
+        document.writeln(div.innerHTML);
+    }
+    // alert(divs.length);*/
+
+
+    /*//3.根据Class属性值获取元素对象们，返回值是一个数组
+    var div_cls = document.getElementsByClassName("cls1");
+    alert(div_cls.length);*/
+
+
+    /*//4.根据name属性值获取元素对象们，返回值是一个数组。
+    var names = document.getElementsByName("username");
+    alert(names.length);*/
+
+
+    /*//创建一个table对象
+    var tbl = document.createElement("table");
+    alert(tbl);*/
+
+
+
+</script>
