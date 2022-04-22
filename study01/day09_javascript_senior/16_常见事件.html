@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>常见事件</title>
+</head>
+<body>
+
+
+<form action="#" id="form">
+    <input name="username" id="username">
+
+    <select name="" id="city">
+        <option>请选择</option>
+        <option>北京</option>
+        <option>上海</option>
+        <option>广州</option>
+    </select>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>
+<script>
+    /*//1.失去焦点事件
+    document.getElementById("username").onblur=function () {
+        alert("失去焦点...");
+    }*/
+
+    /*//2.加载事件
+           // 当script写在body之前，那么onblur方法会报错说没加载input输入框
+           // 所以只需要将onblur方法写入到onload方法里面就可以正确执行，该方法
+           // 的作用是当页面加载完毕后再加载onload方法中的script代码
+    window.onload=function () {
+        document.getElementById("username").onblur=function () {
+            alert("失去焦点...");
+        }
+    }*/
+
+    /*//3.绑定鼠标移动到元素之上事件
+    document.getElementById("username").onmouseover=function () {
+        alert("鼠标来了...");
+    }*/
+
+    /*//4.绑定鼠标点击事件
+    document.getElementById("username").onmousedown=function (event) {
+        //alert("鼠标点击了...");
+        // alert(event.button);
+        alert(event.keyCode);
+    }*/
+
+    /*//5.绑定键盘敲击事件
+    document.getElementById("username").onkeydown=function (event) {
+        //alert("鼠标点击了...");
+        // alert(event.button);
+        if (event.keyCode==13) {
+            alert("提交表单");
+        }
+    }*/
+
+    /*document.getElementById("username").onchange=function (event) {
+        alert("改变了...");
+    }
+
+    document.getElementById("city").onchange = function (event) {
+        alert("改变了...");
+    }*/
+
+
+    document.getElementById("form").onsubmit=function () {
+        //校验用户名格式是否正确
+        var flag = false;
+
+        return flag;
+    }
+
+</script>

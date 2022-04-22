@@ -26,7 +26,7 @@ public class JDBCUtils {
             p.load(stream);
 
             url=p.getProperty("url");
-            user=p.getProperty("user");
+            user=p.getProperty("username");
             password=p.getProperty("password");
             driver=p.getProperty("driver");
 

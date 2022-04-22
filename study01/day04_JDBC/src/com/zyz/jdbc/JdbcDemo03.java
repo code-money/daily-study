@@ -3,6 +3,7 @@ package com.zyz.jdbc;
 import com.zyz.jdbc.entity.Count;
 import com.zyz.util.JDBCUtils;
 
+import javax.sql.DataSource;
 import java.sql.*;
 
 public class JdbcDemo03 {
@@ -30,6 +31,7 @@ public class JdbcDemo03 {
 //                count.setBlance(resultSet.getInt("blance"));
 //                System.out.println(count);
 //            }
+
 
 
         } catch (SQLException throwables) {
