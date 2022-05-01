@@ -1,10 +1,17 @@
 package com.zyz.servlet;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-public class ServletDemo1 implements Servlet {
+/**
+ * @program: study02
+ * @author: zyz
+ * @create: 2022-04-30 17:15
+ **/
 
+@WebServlet("/demo11")
+public class ServletDemo implements Servlet {
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
 
@@ -15,10 +22,9 @@ public class ServletDemo1 implements Servlet {
         return null;
     }
 
-    //提供服务的方法
     @Override
     public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
-        System.out.println("你好中国");
+        System.out.println("Hello World ----------------------");
     }
 
     @Override
@@ -31,3 +37,6 @@ public class ServletDemo1 implements Servlet {
 
     }
 }
+
+
+
