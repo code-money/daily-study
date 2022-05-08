@@ -31,7 +31,6 @@ public class JDBCUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
 

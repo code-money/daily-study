@@ -1,4 +1,4 @@
-package com.zyz.invoke.jdk_proxy;
+package com.zyz.web.jdk_proxy;
 
 
 

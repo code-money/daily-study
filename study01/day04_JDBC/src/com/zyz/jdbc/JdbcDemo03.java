@@ -12,6 +12,8 @@ public class JdbcDemo03 {
         PreparedStatement statement=null;
         try {
             connection = JDBCUtils.getConnection();
+            //设置自动提交为false
+            connection.setAutoCommit(false);
 //            String sql = "select * from count where name = ?";
             String sql="insert into count values(?,?,?)";
             //获取preparestaemnt对象
@@ -31,8 +33,8 @@ public class JdbcDemo03 {
 //                count.setBlance(resultSet.getInt("blance"));
 //                System.out.println(count);
 //            }
-
-
+            //手动提交
+            connection.commit();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
