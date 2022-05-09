@@ -31,6 +31,7 @@ public class FindUserByPage extends HttpServlet {
         //1.获取参数
         String currentPage = req.getParameter("currentPage"); //当前页码
         String rows = req.getParameter("rows");   //每页显示条数
+        //condition为查询条件
         Map<String, String[]> condition = req.getParameterMap();
 
         if (currentPage == null || "".equals(currentPage)){

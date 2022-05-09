@@ -72,7 +72,7 @@
         <c:forEach items="${pb.list}" var="user" varStatus="s">
             <tr>
                 <th><input type="checkbox" name="uid" value="${user.id}"></th>
-                <td>${s.count}</td>
+                <td>${s.count+(pb.currentPage-1)*requestScope.pb.rows}</td>
                 <td>${user.name}</td>
                 <td>${user.gender}</td>
                 <td>${user.age}</td>
@@ -156,7 +156,7 @@
 
         //获取第一个checkbox
         document.getElementById("firstCb").onclick=function () {
-            //获取别表中所有的cb
+            //获取表中所有的cb
             var cbs = document.getElementsByName("uid");
             for (let i = 0; i < cbs.length; i++) {
                 cbs[i].checked=this.checked;
