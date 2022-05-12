@@ -5,7 +5,59 @@
     <title></title>
     <script src="../js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
+        $(function () {
+            /*1. js的遍历方式
+            * for(初始化值;循环结束条件;步长)*/
+            var cits = $("#city li");
+            console.log(cits)
+            for (let i = 0; i < cits.length; i++) {
+                console.log(cits[i].innerHTML)
+            }
 
+            /*2. jq的遍历方式
+                 1. jq对象.each(callback)
+                      1. 语法：
+				            jquery对象.each(function(index,element){});
+                             * index:就是元素在集合中的索引
+                             * element：就是集合中的每一个元素对象
+                             * this：集合中的每一个元素对象*/
+            cits.each(function (index,element) {
+                //3.1获取li对象，this
+                // console.log(this.innerHTML)
+                //转换为jq对象调用html方法也可以获得值
+                //  console.log($(this).html())
+
+                //3.2获取li对象，第二种方式，在回调函数中定义参数  index(索引) element(元素对象)
+                // console.log(index+":"+element.innerHTML)
+                //转换为jq对象调用html方法也可以获得值
+                // console.log(index+":"+$(element).html())
+            })
+
+                     /* 2. 回调函数返回值：
+                             * true:如果当前function返回为false，则结束循环(break)。
+                              * false:如果当前function返回为true，则结束本次循环，继续下次循环(continue)*/
+            cits.each(function (index,element) {
+                if ("上海"==$(element).html()){
+                    //如果当前function返回为false，则结束循环，
+                    //如果当前function返回为true，则结束本次循环，继续下次循环
+                    return false;
+                }
+                console.log(index+":"+$(element).html())
+
+            })
+
+                 /*2. $.each(object, [callback])*/
+                 $.each(cits,function () {
+                     console.log($(this).html())
+                 })
+
+                 /*3. for..of: jquery 3.0 版本之后提供的方式
+                    for(元素对象 of 容器对象)*/
+
+            for (li of cits){
+                console.log($(li).html())
+            }
+        })
 
     </script>
 </head>

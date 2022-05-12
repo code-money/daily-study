@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
+        $(function () {
+            //1.使用on来给按钮绑定单机事件
+            $("#btn").on("click",function () {
+                console.log("我被电击了")
+            })
 
+            //2.使用off来接触btn按钮的单机事件
+            $("#btn2").click(function () {
+                // $("#btn").off("click")
+                $("#btn").off()//如果不传递参数，那么会将组件上所有事件全部解绑
+            })
+        })
 
     </script>
 </head>

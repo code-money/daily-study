@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#username").blur(function () {
+                //获取username文本输入框的值
+                var username = $(this).val();
+                //发送ajax请求
+                //期望服务器响应回的数据格式是
+                // {"userExsit":true,"msg":"此用户太受欢迎，请更换"}   {"userExsit":false,"msg":"用户名可用"}
+                $.get("findUserServlet",{"username":username},function (data) {
+                    //获取span标签
+                    var span = $("#_username");
+                    //判断userExsit的值是否是true
+                    if (data.userExsit){
+                        //用户名存在
+                        span.css("color","red")
+                        span.html(data.msg)
+                    }else {
+                        //用户名不存在
+                        span.css("color","green")
+                        span.html(data.msg)
+                    }
+                },"json")     //需要指定返回的类型，如果不指定那么会返回text类型的数据，所以无法获取
+            })
+        })
+
+    </script>
+</head>
+<body>
+
+<form action="" method="post">
+    <input type="text" id="username" name="username" placeholder="请输入用户名">
+    <span id="_username"></span>
+    <br>
+    <input type="password" name="password" placeholder="请输入密码"><br>
+    <input type="submit" value="注册"><br>
+</form>
+</body>
+</html>

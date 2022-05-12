@@ -1,0 +1,11 @@
+package com.zyz.service;
+
+import com.zyz.entity.Province;
+
+import java.util.List;
+
+public interface ProvinceService {
+    public List<Province> findAll();
+
+    public String findAllJson();
+}

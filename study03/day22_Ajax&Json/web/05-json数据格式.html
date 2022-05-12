@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var person ={"name":"张三",age:23,'gender':true}
+        //获取name的值
+        console.log(person.name)
+
+
+        var persons={"id":1,"persons": [
+                    {"name":"张三",age:23,'gender':true},
+                    {"name":"李四",age:27,'gender':false},
+                    {"name":"王五",age:27,'gender':false}
+                    ]}
+        //获取
+        console.log(persons.persons);
+        console.log(persons.persons[1].name);
+
+
+        //定义数组形式
+        var arrays= [{"name":"张三",age:23,'gender':true},{"name":"李四",age:27,'gender':false},{"name":"王五",age:27,'gender':false}]
+        console.log(arrays[0].name);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

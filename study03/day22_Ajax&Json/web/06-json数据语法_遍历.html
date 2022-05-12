@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        var person ={"name":"张三",age:23,'gender':true}
+        for (var key in person) {
+            console.log(key+":"+person[key]);
+        }
+
+
+        var arrays= [{"name":"张三",age:23,'gender':true},{"name":"李四",age:27,'gender':false},{"name":"王五",age:27,'gender':false}]
+        // for (let i = 0; i < arrays.length; i++) {
+        //     var p=arrays[i];
+        //     for (var key in p) {
+        //         console.log(key+":"+p[key]);
+        //     }
+        // }
+
+        //利用jquery遍历json
+        $(arrays).each(function (name,value) {
+            console.log(name);  //索引下标
+            console.log(value);  //当前遍历对象
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

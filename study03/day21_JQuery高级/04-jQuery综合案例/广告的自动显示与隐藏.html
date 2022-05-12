@@ -8,9 +8,25 @@
     </style>
 
     <!--引入jquery-->
-    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
     <script>
+        //1.使用定时器来完成，setTimeout
+        //2.分析发现jq的显示和隐藏动画效果其实就是控制display
+        //3.使用 show/hide 相关方法完成广告的显示
 
+
+        $(function () {
+            //定义定时器，调用显示方法，3秒后执行
+            setTimeout(showDiv,3000)
+            //定义定时器，调用隐藏方法，想让他显示5秒后隐藏，但是需要加上一开始显示的3秒，所以是8秒
+            setTimeout(hideDiv,8000)
+        })
+        function showDiv() {
+            $("#ad").show("slow")
+        }
+        function hideDiv() {
+            $("#ad").hide("slow")
+        }
     </script>
 </head>
 <body>

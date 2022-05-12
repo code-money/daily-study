@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
+    <script src="../js/jquery-3.6.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        $(function () {
+            /*//1.绑定单机事件
+            $("#name").click(function () {
+                console.log("我被电击了")
+            })*/
 
+            /*//2.绑定鼠标移动到元素之上的事件，绑定鼠标移除事件
+            $("#name").mouseover(function () {
+                console.log("鼠标来了")
+            })*/
+            /*$("#name").mouseout(function () {
+                console.log("鼠标走了")
+            })*/
+
+            /*//简化操作,链式编程
+            $("#name").mouseover(function () {
+                console.log("鼠标来了")
+            }).mouseout(function () {
+                console.log("鼠标走了")
+            })*/
+            //让文本输入框获得焦点
+            $("#name").focus();
+            //表单对象.submit()  //提交表单
+        })
 
     </script>
 </head>
