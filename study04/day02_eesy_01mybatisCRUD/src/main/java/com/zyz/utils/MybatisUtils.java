@@ -1,4 +1,4 @@
-package com.zyz.util;
+package com.zyz.utils;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -31,7 +31,7 @@ public class MybatisUtils {
     }
 
     public static SqlSession getSqlSession(){
-        return  sessionFactory.openSession();
+        return  sessionFactory.openSession(true);  //true代表自动提交事务  默认是不提交
     }
 }
 
