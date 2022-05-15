@@ -24,10 +24,10 @@ public class JedisTest {
     @Test
     public void test01(){
         //1.获取连接
-        Jedis jedis = new Jedis("localhost",6379);
+        Jedis jedis = new Jedis("101.42.225.134",9763);
         //2.操作
-        jedis.set("username","zhangsan");
-        jedis.close();
+        String name = jedis.get("name");
+        System.out.println(name);
     }
 
     //string 数据结构操作
@@ -102,7 +102,7 @@ public class JedisTest {
         config.setMaxIdle(10);
 
         //1.创建jedis连接池对象
-        JedisPool pool = new JedisPool();
+        JedisPool pool = new JedisPool(config,"localhost",6379);
 
         //2.获取连接
         Jedis resource = pool.getResource();
