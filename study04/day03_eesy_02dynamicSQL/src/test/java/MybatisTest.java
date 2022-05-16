@@ -1,3 +1,4 @@
+import com.mysql.jdbc.Driver;
 import com.zyz.dao.UserDao;
 import com.zyz.entity.QueryVo;
 import com.zyz.entity.User;
@@ -5,6 +6,8 @@ import com.zyz.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -23,47 +26,6 @@ public class MybatisTest {
         for (User user : all) {
             System.out.println(user);
         }
-        sqlSession.close();
-    }
-
-    @Test
-    public void saveUser(){
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserDao mapper = sqlSession.getMapper(UserDao.class);
-        User user = new User();
-        user.setUsername("张三");
-        user.setBirthday(new Date());
-        user.setSex("男");
-        user.setAddress("北京");
-        System.out.println(user);
-        mapper.saveUser(user);
-        System.out.println(user);
-
-        sqlSession.close();
-    }
-
-    @Test
-    public void updateUser(){
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserDao mapper = sqlSession.getMapper(UserDao.class);
-        User user = new User();
-        user.setId(49);
-        user.setUsername("李四");
-        user.setBirthday(new Date());
-        user.setSex("女");
-        user.setAddress("天津");
-        mapper.updateUser(user);
-
-        sqlSession.close();
-    }
-
-    @Test
-    public void deleteUser(){
-
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserDao mapper = sqlSession.getMapper(UserDao.class);
-        mapper.deleteUser(53,"男");
-
         sqlSession.close();
     }
 
@@ -89,20 +51,9 @@ public class MybatisTest {
         sqlSession.close();
     }
 
-    @Test
-    public void findTotal(){
-
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserDao mapper = sqlSession.getMapper(UserDao.class);
-        Integer total = mapper.findTotal();
-        System.out.println(total);
-        sqlSession.close();
-    }
-
 
     @Test
     public void findUserByVo(){
-
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         UserDao mapper = sqlSession.getMapper(UserDao.class);
         QueryVo queryVo = new QueryVo();
@@ -114,6 +65,44 @@ public class MybatisTest {
             System.out.println(user1);
         }
         sqlSession.close();
+    }
+
+    /**
+     * 根据条件查询
+     */
+    @Test
+    public void findUserByCondition(){
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        User u = new User();
+        u.setUsername("老王");
+        u.setSex("女");
+        List<User> users = mapper.findUserByCondition(u);
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
+
+
+    /**
+     * 根据queryvo中的id集合实现查询用户列表
+     */
+    @Test
+    public void findUserInIds(){
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        UserDao mapper = sqlSession.getMapper(UserDao.class);
+        QueryVo vo = new QueryVo();
+        List vo_ids = new ArrayList();
+        vo_ids.add(41);
+        vo_ids.add(42);
+        vo_ids.add(48);
+        vo.setIds(vo_ids);
+
+        List<User> users = mapper.findUserInIds(vo);
+        for (User user : users) {
+            System.out.println(user);
+        }
+
     }
 }
 
