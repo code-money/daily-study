@@ -6,11 +6,20 @@
 <mapper namespace="com.zyz.dao.RoleDao">
 
     <resultMap id="roleMap" type="role">
-        <id property="roleId" column="id"/>
+        <id property="roleId" column="rid"/>
         <result property="roleName" column="role_name"/>
         <result property="roleDesc" column="role_desc"/>
+        <collection property="users" ofType="user">
+            <id property="id" column="id"/>
+            <result property="username" column="username"/>
+            <result property="address" column="address"/>
+            <result property="sex" column="sex"/>
+            <result property="birthday" column="birthday"/>
+        </collection>
     </resultMap>
     <select id="findAll" resultMap="roleMap">
-        select * from role
+        SELECT r.id AS rid,r.role_name,r.role_desc,u.* FROM user u
+            JOIN user_role ur ON u.id=ur.uid
+            RIGHT JOIN role r ON r.ID=ur.rid
     </select>
 </mapper>
