@@ -7,20 +7,17 @@
 
 
     <resultMap id="accountUserMap" type="account">
-        <id property="id" column="aid"/>
+        <id property="id" column="id"/>
         <result property="uid" column="uid"/>
         <result property="money" column="money"/>
-        <association property="user" column="uid" javaType="user">
-            <id property="id" column="id"/>
-            <result property="username" column="username"/>
-            <result property="address" column="address"/>
-            <result property="sex" column="sex"/>
-            <result property="birthday" column="birthday"/>
-        </association>
-
+        <association property="user" column="uid" javaType="user" select="com.zyz.dao.UserDao.findById"></association>
     </resultMap>
     <select id="findAll" resultMap="accountUserMap">
-        SELECT a.id AS aid,a.uid,a.money,u.* FROM account a LEFT JOIN user u ON a.uid=u.id
+        select * from account
+    </select>
+
+    <select id="findAccountByUid" resultType="account">
+        select * from account where uid=#{uid}
     </select>
 
 </mapper>

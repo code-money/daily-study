@@ -10,14 +10,11 @@
         <result property="address" column="address"/>
         <result property="sex" column="sex"/>
         <result property="birthday" column="birthday"/>
-        <collection property="accounts" ofType="account">
-            <id property="id" column="aid"/>
-            <result property="uid" column="uid"/>
-            <result property="money" column="money"/>
+        <collection property="accounts" column="id" ofType="account" select="com.zyz.dao.AccountDao.findAccountByUid">
         </collection>
     </resultMap>
     <select id="findAll" resultMap="UserAccountMap">
-        SELECT u.*,a.id AS aid,a.uid,a.money FROM user u LEFT JOIN account a ON u.id=a.uid
+        SELECT * from user
     </select>
 
     <select id="findById" parameterType="int" resultType="user">
