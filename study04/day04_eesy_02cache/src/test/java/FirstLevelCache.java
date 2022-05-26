@@ -14,17 +14,6 @@ import java.util.List;
 
 public class FirstLevelCache {
 
-    @Test
-    public void UserTest(){
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserDao mapper = sqlSession.getMapper(UserDao.class);
-        List<User> users = mapper.findAll();
-        for (User user : users) {
-            System.out.println(user);
-        }
-        sqlSession.close();
-    }
-
 
     /**
      * 测试一级缓存

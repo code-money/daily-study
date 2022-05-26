@@ -15,7 +15,6 @@ public class Test {
         AliSmsService aliSmsService = (AliSmsService) CglibProxyFactory.getProxy(AliSmsService.class);
         aliSmsService.send("java");
 
-        Thread thread = new Thread();
 
 
     }

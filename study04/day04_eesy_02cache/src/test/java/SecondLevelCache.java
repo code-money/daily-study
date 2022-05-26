@@ -20,18 +20,6 @@ import java.util.List;
 
 public class SecondLevelCache {
 
-    @Test
-    public void UserTest(){
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserDao mapper = sqlSession.getMapper(UserDao.class);
-        List<User> users = mapper.findAll();
-        for (User user : users) {
-            System.out.println(user);
-        }
-        sqlSession.close();
-    }
-
-
     /**
      * 测试二级缓存
      */
@@ -57,26 +45,6 @@ public class SecondLevelCache {
 
     }
 
-    /**
-     * 测试一级缓存
-     */
-    @Test
-    public void testFirstLevelCache2(){
-        SqlSession sqlSession = MybatisUtils.getSqlSession();
-        UserDao mapper = sqlSession.getMapper(UserDao.class);
-        User user1 = mapper.findById(41);
-        //关闭sqlSession对象
-        sqlSession.close();
-        //重新开启一个新的sqlSession对象
-        SqlSession sqlSession1 = MybatisUtils.getSqlSession();
-        UserDao mapper1 = sqlSession1.getMapper(UserDao.class);
-
-        User user2 = mapper1.findById(41);
-
-        //此时的结果为false，说明缓存存在于sqlSession中，关闭消失
-        System.out.println(user1==user2);
-
-    }
 
     /**
      * 测试清空缓存
