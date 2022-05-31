@@ -62,7 +62,7 @@
         -->
         <!--5.配置事务的属性-->
         <tx:attributes>
-            <tx:method name="*" propagation="REQUIRED" read-only="false"></tx:method>
+            <tx:method name="*" propagation="REQUIRED" read-only="true"></tx:method>
             <tx:method name="find*"  propagation="SUPPORTS" read-only="true"></tx:method>
         </tx:attributes>
     </tx:advice>

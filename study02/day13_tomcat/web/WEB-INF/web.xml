@@ -19,7 +19,8 @@
     <servlet>
         <servlet-name>demo2</servlet-name>
         <servlet-class>com.zyz.servlet.ServletDemo2</servlet-class>
-        <!--load-on-startup：作用为设置该servlet在是否在服务器启动时进行创建
+        <!--load-on-startup：
+            作用为设置该servlet在是否在服务器启动时进行创建
             负数为在第一次被访问时创建
             正数为在服务器启动时创建
         -->

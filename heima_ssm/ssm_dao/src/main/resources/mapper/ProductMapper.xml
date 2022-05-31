@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zyz.dao.ProductDao">
+
+    <resultMap id="ProductMap" type="cn.zyz.entity.Product">
+        <id property="id" column="id"/>
+        <result property="productNum" column="productnum"/>
+        <result property="productName" column="productname"/>
+        <result property="cityName" column="cityname"/>
+        <result property="departureTime" column="departuretime"/>
+        <result property="productPrice" column="productprice"/>
+        <result property="productDesc" column="productdesc"/>
+        <result property="productStatus" column="productstatus"/>
+    </resultMap>
+    <select id="findAll" resultMap="ProductMap">
+        select * from product
+    </select>
+
+</mapper>
