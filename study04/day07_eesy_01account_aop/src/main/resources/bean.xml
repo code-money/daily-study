@@ -51,7 +51,7 @@
             <aop:before method="beginTransaction" pointcut-ref="pt"></aop:before>
             <aop:after-returning method="commitTransaction" pointcut-ref="pt"></aop:after-returning>
             <aop:after-throwing method="rollbackTransaction" pointcut-ref="pt"></aop:after-throwing>
-            <aop:after-returning method="releaseTransaction" pointcut-ref="pt"></aop:after-returning>
+            <aop:after method="releaseTransaction" pointcut-ref="pt"></aop:after>
         </aop:aspect>
     </aop:config>
 </beans>

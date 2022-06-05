@@ -11,4 +11,17 @@ public interface ProductDao {
      * @return
      */
     public List<Product> findAll();
+
+    /**
+     * 新增信息
+     * @param product
+     */
+    void save(Product product);
+
+
+    /**
+     * 根据id查询产品信息
+     * @return
+     */
+    Product findById(String id);
 }

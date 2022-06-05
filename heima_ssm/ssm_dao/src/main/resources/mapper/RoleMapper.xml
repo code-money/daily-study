@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zyz.dao.RoleDao">
+
+
+    <resultMap id="RoleMap" type="cn.zyz.entity.Role">
+        <id property="id" column="id"></id>
+        <result property="roleName" column="roleName"></result>
+        <result property="roleDesc" column="roleDesc"></result>
+        <collection property="permissions" column="id" ofType="cn.zyz.entity.Permission"
+                    select="cn.zyz.dao.PermissionDao.findPermissionByRoleId"></collection>
+    </resultMap>
+
+    <select id="findRoleByUserid" resultMap="RoleMap">
+        select * from role where id in (select roleId from users_role where userId=#{userId})
+    </select>
+
+    <select id="findAll" resultType="role">
+        select * from role
+    </select>
+
+    <insert id="save" parameterType="role">
+        insert into role(roleName,roleDesc) values(#{roleName},#{roleDesc})
+    </insert>
+
+</mapper>

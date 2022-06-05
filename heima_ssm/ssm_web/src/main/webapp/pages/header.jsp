@@ -22,7 +22,7 @@
 					class="dropdown-toggle" data-toggle="dropdown"> <img
 						src="${pageContext.request.contextPath}/img/user2-160x160.jpg"
 						class="user-image" alt="User Image"> <span class="hidden-xs">
-							xxx
+
 					</span>
 
 				</a>
@@ -38,7 +38,7 @@
 								<a href="#" class="btn btn-default btn-flat">修改密码</a>
 							</div>
 							<div class="pull-right">
-								<a href="${pageContext.request.contextPath}/logout.do"
+								<a href="${pageContext.request.contextPath}/logout"
 									class="btn btn-default btn-flat">注销</a>
 							</div>
 						</li>
@@ -48,4 +48,17 @@
 		</div>
 	</nav>
 </header>
+<script src="${pageContext.request.contextPath}/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script>
+	$(function () {
+		$.ajax({
+			type:"POST",
+			url:"${pageContext.request.contextPath}/user/getUserName",
+			success:function (data) {
+				console.log(data)
+				$(".hidden-xs").text(data)
+			}
+		})
+	})
+</script>
 <!-- 页面头部 /-->

@@ -21,12 +21,18 @@ public class MybatisTest {
     public void AccountTest(){
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         AccountDao mapper = sqlSession.getMapper(AccountDao.class);
-//        List<Account> list = mapper.findAll();
-//        for (Account account : list) {
-//            System.out.println(account);
-//
-//        }
         List<Account> list =mapper.findAccountByUid(41);
+        for (Account account : list) {
+            System.out.println(account);
+        }
+        sqlSession.close();
+    }
+
+    @Test
+    public void AccountTest2(){
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        AccountDao mapper = sqlSession.getMapper(AccountDao.class);
+        List<Account> list = mapper.findAll();
         for (Account account : list) {
             System.out.println(account);
         }

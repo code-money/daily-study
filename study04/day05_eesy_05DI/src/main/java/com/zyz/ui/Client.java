@@ -29,7 +29,5 @@ public class Client {
         AccountService service = context.getBean("AccountService3", AccountService.class);
         service.saveAccount();
 
-
-
     }
 }
