@@ -1,6 +1,7 @@
 package com.zyz.ui;
 
 
+import com.zyz.entity.Person;
 import com.zyz.service.AccountService;
 import com.zyz.service.impl.AccountServiceImpl;
 import org.springframework.beans.factory.BeanFactory;
@@ -26,8 +27,10 @@ public class Client {
 //
 //        AccountService service2 = context.getBean("accountService2", AccountService.class);
 //        service2.saveAccount();
-        AccountService service = context.getBean("AccountService3", AccountService.class);
-        service.saveAccount();
+        /*AccountService service = context.getBean("AccountService3", AccountService.class);
+        service.saveAccount();*/
+        Person person = context.getBean("person", Person.class);
+        System.out.println(person.getName());
 
     }
 }

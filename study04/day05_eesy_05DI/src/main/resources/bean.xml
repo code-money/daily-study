@@ -21,9 +21,9 @@
                 其他bean类型（在配置文件中或者注解配置过的bean）
                 复杂类型/集合类型
              注入的方式：有三种
-                第一种：使用构造函数提供
-                第二种：使用set方法提供
-                第三种：使用注解提供（明天的内容）
+                第一种：使用构造函数注入
+                第二种：使用set方法注入
+                第三种：使用注解注入（明天的内容）
      -->
 
 
@@ -104,7 +104,7 @@
                 <entry key="c" value="CCC"></entry>
             </map>
         </property>
-        
+
         <property name="myProps">
             <props>
                 <prop key="A">aaa</prop>
@@ -112,6 +112,9 @@
                 <prop key="C">ccc</prop>
             </props>
         </property>
+    </bean>
+
+    <bean id="person" class="com.zyz.entity.Person">
     </bean>
 
 

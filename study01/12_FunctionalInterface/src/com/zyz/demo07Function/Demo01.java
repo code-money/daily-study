@@ -12,5 +12,11 @@ public class Demo01 {
         method("111",(str)->{
             return Integer.parseInt("1111");
         });
+        method("222", new Function<String, Integer>() {
+            @Override
+            public Integer apply(String s) {
+                return null;
+            }
+        });
     }
 }
