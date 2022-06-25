@@ -70,7 +70,7 @@ public class AnnoController {
      * 该方法优先于请求执行
      */
     @ModelAttribute
-    public User showUser(String uname){
+    public User showUser(String uname){   //uname是根据请求传递的参数获得的
         System.out.println(uname);
         System.out.println("showUser执行了");
         //数据库通过传递过来的uname进行查询(模拟)
