@@ -4,7 +4,7 @@ import java.io.File;
 import java.util.Locale;
 
 
-//文件过滤
+//递归实现文件过滤
 public class Demo03Recursion {
     public static void main(String[] args) {
 

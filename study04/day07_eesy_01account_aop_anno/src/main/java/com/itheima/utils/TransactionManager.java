@@ -19,6 +19,8 @@ import java.sql.SQLException;
  *   回滚事务
  *   释放连接
  */
+
+//注意，该版本的spring包的Aop相关注解有问题，@After注解会优先于@AfterRuternning执行，会报错
 @Component("transactionManager")
 @Aspect
 public class TransactionManager {

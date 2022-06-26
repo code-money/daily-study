@@ -1,5 +1,7 @@
 package cn.zyz.demo01.recursion;
 
+
+//简单递归
 public class Demo01Recursion {
     public static void main(String[] args) {
         System.out.println(getSum(100));

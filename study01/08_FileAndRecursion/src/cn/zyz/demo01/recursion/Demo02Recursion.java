@@ -4,7 +4,7 @@ import java.io.File;
 import java.lang.reflect.Field;
 
 
-//文件遍历
+//递归实现文件遍历
 public class Demo02Recursion {
     public static void main(String[] args) {
 

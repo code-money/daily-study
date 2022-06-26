@@ -14,7 +14,7 @@ public class Demo01Filter {
 
 
     private static void paths(File file) {
-        //调用FileFilter的实现类，用来过滤文件
+        //调用FileFilter(Filter的实现类)作为参数，过滤文件
         File[] files = file.listFiles(new FileFilterImpl());
         for (File f : files) {
             if (f.isDirectory()){
