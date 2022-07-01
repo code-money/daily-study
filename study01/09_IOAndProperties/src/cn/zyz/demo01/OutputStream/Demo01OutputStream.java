@@ -13,10 +13,9 @@ import java.io.OutputStream;
 
 public class Demo01OutputStream {
     public static void main(String[] args) throws IOException {
-        FileOutputStream fileOutputStream = new FileOutputStream(new File("a.txt"));
+        FileOutputStream fileOutputStream = new FileOutputStream("09_IOAndProperties\\a.txt");
         fileOutputStream.write(97);
         fileOutputStream.write(98);
-
         fileOutputStream.close();
     }
 }
