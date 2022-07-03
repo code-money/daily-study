@@ -1,9 +1,8 @@
 package cn.zyz.demo01.OutputStream;
 
-import java.io.FileNotFoundException;
+
 import java.io.FileOutputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
+
 
 public class Demo02OutputStream {
     public static void main(String[] args) throws Exception {
@@ -15,7 +14,7 @@ public class Demo02OutputStream {
 
         String str = "你好世界";
 
-        fileOutputStream.write(str.getBytes(StandardCharsets.UTF_8));
+        fileOutputStream.write(str.getBytes());
         fileOutputStream.close();
     }
 }
