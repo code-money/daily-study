@@ -49,7 +49,7 @@ public class Demo01Properties {
         properties.load(new FileInputStream("09_IOAndProperties\\two.properties"));
         Set<String> strings = properties.stringPropertyNames();
         for (String string : strings) {
-            System.out.println(string);
+            System.out.println(string+"="+properties.getProperty(string));
         }
     }
 
@@ -77,7 +77,7 @@ public class Demo01Properties {
         properties.setProperty("李四","100");
         properties.setProperty("王五","100");
         OutputStream fos= new FileOutputStream("09_IOAndProperties\\two.properties");
-        properties.store(fos,"");
+        properties.store(fos,""); //comments参数为要写入的注释
         fos.close();
 
     }

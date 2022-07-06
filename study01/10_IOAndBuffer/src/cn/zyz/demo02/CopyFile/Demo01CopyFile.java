@@ -13,7 +13,7 @@ import java.io.OutputStream;
 
 //文件复制
 public class Demo01CopyFile {
-    //字节输入流和字符输出流复制文件较慢
+    //字节输入流和字节输出流复制文件较慢
     public static void main(String[] args) throws Exception {
         long begin = System.currentTimeMillis();
         InputStream inputStream = new FileInputStream("09_IOAndProperties\\111.jpg");
