@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/mybatisplus_db?serverTimezone=UTC&characterEncoding=utf8
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  main:
+    banner-mode: off
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印mybatis日志
+  global-config:
+    banner: false
+    db-config:
+      insert-strategy:
+#    db-config:
+#      id-type: assign_id    #设置全局ID自增策略
+

@@ -10,7 +10,7 @@ public class Demo01 {
 
     public static void main(String[] args) {
         method("111",(str)->{
-            return Integer.parseInt("1111");
+            return Integer.parseInt(str);
         });
         method("222", new Function<String, Integer>() {
             @Override

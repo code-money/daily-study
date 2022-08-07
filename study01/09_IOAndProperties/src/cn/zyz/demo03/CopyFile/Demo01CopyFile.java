@@ -19,10 +19,9 @@ public class Demo01CopyFile {
         int len = 0; //每次读取的有效字节个数
         while ((len = inputStream.read(bytes)) != -1) {
             outputStream.write(bytes, 0, len);
-            outputStream.close();
-            inputStream.close();
-
         }
+        outputStream.close();
+        inputStream.close();
     }
 }
 

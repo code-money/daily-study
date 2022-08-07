@@ -4,8 +4,13 @@ public class Person {
     private Integer age;
     private String name;
 
-    public Person() {
-        this.name="张三";
+//    public Person() {
+//        this.name="张三";
+//        this.age=13;
+//    }
+
+        public Person(String name) {
+        this.name=name;
         this.age=13;
     }
 

@@ -115,6 +115,7 @@
     </bean>
 
     <bean id="person" class="com.zyz.entity.Person">
+        <constructor-arg value="李四"></constructor-arg>
     </bean>
 
 
