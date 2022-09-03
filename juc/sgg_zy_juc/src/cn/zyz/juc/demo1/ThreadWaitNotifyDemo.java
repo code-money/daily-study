@@ -22,7 +22,7 @@ class AirConditioner {
                 使用while循可以解决此问题，在下一此次被唤醒后，因为wait是在循环体中，即便从wait开始执行也会再次进行判断，判断后如果条件不成立
                 该线程会继续wait，所以while循环可以解决虚假唤醒的问题
          */
-//        if (number != 0) {
+        //if (number != 0) {
         while (number != 0) {
             try {
                 wait();
@@ -44,7 +44,7 @@ class AirConditioner {
                 原因是，比如说消费者1进行一次虚假唤醒后此时number=-1，那么之后消费者1获取锁后都再进行if(number==0)
                 就不会再进入wait状态了，所以可能出现消费者1一直进行消费的情况。
          */
-//        if (number == 0) {
+        //if (number == 0) {
         while (number == 0) {
             try {
                 wait();

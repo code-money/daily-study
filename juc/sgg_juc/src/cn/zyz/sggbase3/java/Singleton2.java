@@ -10,7 +10,7 @@ public class Singleton2 {
 
 //单例设计模式,饿汉式
 class Single2{
-    //在类装载的时候就进行初始化即为饿汉式
+    //在类加载的时候就进行初始化即为饿汉式
     private static Single2 instance = new Single2();
     public static Single2 getInstance(){
         return instance;

@@ -10,7 +10,7 @@ public class Singleton1 {
 //单例设计模式,懒汉式
 class Single1{
     private static Single1 instance;
-    //在类初始化的时候才进行初始化即为懒汉式
+    //在调用类方法时进行初始化即为懒汉式
     public static Single1 getInstance(){
         if (instance==null){
             instance = new Single1();
