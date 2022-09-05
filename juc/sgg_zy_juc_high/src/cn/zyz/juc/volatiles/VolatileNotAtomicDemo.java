@@ -13,14 +13,14 @@ class MyNumber {
     int number;
 
     public void increment() {
-        number+=1;
+        number++;
     }
 }
 
 public class VolatileNotAtomicDemo {
     public static void main(String[] args) {
         MyNumber myNumber = new MyNumber();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 10; i++) {
             new Thread(() -> {
                 for (int j = 0; j < 1000; j++) {
                     myNumber.increment();
@@ -29,9 +29,8 @@ public class VolatileNotAtomicDemo {
         }
         try { TimeUnit.SECONDS.sleep(2 );}catch (Exception e){e.printStackTrace();}
 
-        //System.out.println(myNumber.number);
+        System.out.println(myNumber.number);
 
-        System.out.println(Thread.currentThread().getThreadGroup());
     }
 }
 
